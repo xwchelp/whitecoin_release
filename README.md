@@ -4,3 +4,7 @@
 
 Please update to Whitecoin 2.5.4 for your Whitenode(raspbarry pi 3B)
 
+### Onekey update way:  
+1. $ ssh pi@your_raspberry_pi    
+2. $ wget https://github.com/xwchelp/whitecoin_release/raw/master/update_whitecoind.sh && chmod +x update_whitecoind.sh && ./update_whitecoind.sh   
+
