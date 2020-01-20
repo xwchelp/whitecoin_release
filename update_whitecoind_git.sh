@@ -43,7 +43,11 @@ echo "Restart whitecoind"
 sudo systemctl start whitecoin
 sudo systemctl enable whitecoin
 
+echo 
+echo "ls -lh "${path_whitecoind}
 ls -lh ${path_whitecoind}
+
+echo
 sudo systemctl status whitecoin
 echo  "Done All!"
 
