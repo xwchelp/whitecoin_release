@@ -7,7 +7,7 @@
 
 #usage:
 # ssh pi@your_raspberry_ip    //default password is "raspberry"
-# sudo apt-get install -y zip git
+# sudo apt-get install -y zip git tmux
 # git clone git@github.com:xwchelp/whitecoin_release.git
 # cd whitecoin_release
 # ./update_whitecoind_git.sh
@@ -43,6 +43,8 @@ echo "Restart whitecoind"
 sudo systemctl start whitecoin
 sudo systemctl enable whitecoin
 
+ls -lh ${path_whitecoind}
+sudo systemctl status whitecoin
 echo  "Done All!"
 
 
