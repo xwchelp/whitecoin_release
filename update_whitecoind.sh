@@ -31,7 +31,7 @@ cd .xwc_help
 
 echo Download whitecoind_lastest
 #wget https://github.com/xwchelp/whitecoin_release/raw/master/whitecoind_2.5.4
-wget  https://github.com/xwchelp/whitecoin_release/raw/master/whitecoind_lastest
+wget  https://github.com/xwchelp/whitecoin_release/raw/master/whitecoind_last
 
 echo "Stop whitecoin service"
 sudo systemctl stop whitecoin
