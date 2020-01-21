@@ -1,13 +1,14 @@
 # whitecoin_release
+# version: whitecoind_last = v2.5.4.0-19-ge1cd7c0f
+#
+# 1. whitecoind_last
+# 2. whitecoind_v2.5.4.0-19-ge1cd7c0f
+# 3. whitecoind_v2.5.4.0-19-ge1cd7c0f.sha256.sum
+# 4. file 1 is same to file 2. Their sha256sum is in file 3
+# 5. Count sha256sum : $sha256sum whitecoind_last
 
-[Click this for download whitecoind_2.5.4](https://github.com/xwchelp/whitecoin_release/raw/master/whitecoind_2.5.4)
 
 Please update to Whitecoin 2.5.4 for your Whitenode(raspbarry pi 3B)
-
-### Onekey update way:  
-1. $ ssh pi@your_raspberry_pi    
-2. $ wget https://github.com/xwchelp/whitecoin_release/raw/master/update_whitecoind.sh && chmod +x update_whitecoind.sh && ./update_whitecoind.sh   
-3. Note: This way is not tested. 
 
 ### Use git update way:
 1. $ ssh pi@your_raspberry_ip    //default password is "raspberry"
@@ -15,9 +16,10 @@ Please update to Whitecoin 2.5.4 for your Whitenode(raspbarry pi 3B)
 3. $ git clone git@github.com:xwchelp/whitecoin_release.git
 4. $ cd whitecoin_release
 5. $ ./update_whitecoind_git.sh
+6. $ Done All
+7. $  In your explorer input url: ttps://your_raspberry_ip for check it.
 
 
-# 简体中文
 ### 使用gitclone下载安装:
 1. $ ssh pi@your_raspberry_ip    //树梅派矿机缺省密码 "raspberry"
 2. $ sudo apt-get install -y zip git tmux
