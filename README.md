@@ -1,11 +1,11 @@
-# whitecoin_release
-# version: whitecoind_last = v2.5.4.0-19-ge1cd7c0f
-#
-# 1. whitecoind_last
-# 2. whitecoind_v2.5.4.0-19-ge1cd7c0f
-# 3. whitecoind_v2.5.4.0-19-ge1cd7c0f.sha256.sum
-# 4. file 1 is same to file 2. Their sha256sum is in file 3
-# 5. Count sha256sum : $sha256sum whitecoind_last
+### whitecoin_release
+    version: whitecoind_last = v2.5.4.0-19-ge1cd7c0
+
+1. whitecoind_last
+2. whitecoind_v2.5.4.0-19-ge1cd7c0f
+3. whitecoind_v2.5.4.0-19-ge1cd7c0f.sha256.sum
+4. file 1 is same to file 2. Their sha256sum is in file 3
+5. Count sha256sum : $sha256sum whitecoind_last
 
 
 Please update to Whitecoin 2.5.4 for your Whitenode(raspbarry pi 3B)
