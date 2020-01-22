@@ -1,5 +1,7 @@
 ### whitecoin_release
-    version: whitecoind_last = v2.5.4.0-19-ge1cd7c0
+    readme version : V0.1  
+    date:  2020.1.22
+    whitecoind version: whitecoind_last = v2.5.4.0-19-ge1cd7c0
 
 1. whitecoind_last
 2. whitecoind_v2.5.4.0-19-ge1cd7c0f
@@ -12,7 +14,7 @@
 ### Use git update way:
 1. $ ssh pi@your_raspberry_ip    //default password is "raspberry"
 2. $ sudo apt-get install -y zip git tmux
-3. $ git clone git@github.com:xwchelp/whitecoin_release.git
+3. $ git clone https://github.com/xwchelp/whitecoin_release.git
 4. $ cd whitecoin_release
 5. $ ./update_whitecoind_git.sh
 6. $ Done All
@@ -22,7 +24,7 @@
 ### 使用gitclone下载安装:
 1. $ ssh pi@your_raspberry_ip    //树梅派矿机缺省密码 "raspberry"
 2. $ sudo apt-get install -y zip git tmux
-3. $ git clone git@github.com:xwchelp/whitecoin_release.git
+3. $ git clone https://github.com/xwchelp/whitecoin_release.git
 4. $ cd whitecoin_release
 5. $ ./update_whitecoind_git.sh  
 6. 安装完成,可以在 浏览器查看你的矿机,地址栏输入:  https://your_raspberry_ip  
