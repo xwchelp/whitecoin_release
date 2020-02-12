@@ -18,7 +18,7 @@
 4. $ cd whitecoin_release
 5. $ ./update_whitecoind_git.sh
 6. $ Done All
-7. $  In your explorer input url: ttps://your_raspberry_ip for check it.
+7. $  In your explorer input url: https://your_raspberry_ip for check it.
 
 
 ### 使用gitclone下载安装:
