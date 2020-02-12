@@ -1,13 +1,16 @@
+#!/bin/bash
+
 #file name : update_whitecoind_git.sh
 #function : Auto download whitecoind and then replace /usr/local/bin/whitecoind
-#version 0.9
+#version 0.10
 #writed by xwc_help
 #email: xwc_help@protonmail.com
 #date: 2020.1.19
+#date-last: 2020.2.12
 
 #usage:
 # ssh pi@your_raspberry_ip    //default password is "raspberry"
-# sudo apt-get install -y zip git tmux
+# sudo apt install -y zip git tmux
 # git clone git@github.com:xwchelp/whitecoin_release.git
 # cd whitecoin_release
 # ./update_whitecoind_git.sh
