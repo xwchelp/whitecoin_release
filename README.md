@@ -1,4 +1,6 @@
-### whitecoin_release
+### whitecoin_release for whitenode
+    raspberry pi 3b+ 1G RAM
+    
     readme version : V0.1  
     date:  2020.1.22
     whitecoind version: whitecoind_last = v2.5.4.0-19-ge1cd7c0
@@ -10,7 +12,7 @@
 5. Count sha256sum : $sha256sum whitecoind_last
 ---
 
- *Please update to Whitecoin 2.5.4 for your Whitenode(raspbarry pi 3B)*
+ *Please update to Whitecoin 2.5.4 for your Whitenode(raspbarry pi 3B+)*
 ### Use git update way:
 1. $ ssh pi@your_raspberry_ip    //default password is "raspberry"
 2. $ sudo apt-get install -y zip git tmux
