@@ -18,12 +18,13 @@
 #14. install:  
 #15. update_whitecoind_git.sh
 
+echo $SHLVL
+
 readonly workdir="${HOME}/.tmp_john_update"
 function makeworkdir()
 {
   local work_dir=$1
-  mkdir -p $work_dir 
-  #> /dev/null 2>&1
+  mkdir -p $work_dir > /dev/null 2>&1
 }
 
 readonly url_whitecoind_last_sum='https://raw.githubusercontent.com/xwchelp/whitecoin_release/master/whitecoind_last.sha512.sum'
@@ -32,9 +33,15 @@ function get_whitecoind_last_sum()
   local cur_dir=$(pwd)
   makeworkdir $workdir
   cd $workdir
-  echo $(wget --no-check-certificate  -o whitecoind_last.sha512.sum url_whitecoind_last_sum > /dev/null 2>&1 )
+
+  echo "Shell level = "$SHLVL
+  echo "pwd = "$(pwd)
+  echo "\$workdir = "$workdir
+
+  rm -f "${workdir}/whitecoind_last.sha512.sum"
+  `wget --no-check-certificate  -o whitecoind_last.sha512.sum ${url_whitecoind_last_sum} > /dev/null 2>&1 `
   echo $(cat whitecoind_last.sha512.sum | awk '{print $1}' | tail -n 1)
-  cd $cur_dir
+  #cd $cur_dir
   return 0
 }
 
@@ -97,8 +104,9 @@ function test2()
 
 #curr_whitecoind_sum
 
-last_sum=$(get_whitecoind_last_sum)
-echo last_sum
+get_whitecoind_last_sum
+#last_sum=$(get_whitecoind_last_sum)
+#echo last_sum
 
 
 #makeworkdir $workdir
