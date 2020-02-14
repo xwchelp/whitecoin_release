@@ -20,7 +20,7 @@
 
 echo $SHLVL
 
-readonly workdir="${HOME}/.tmp_john_update"
+readonly workdir="${HOME}/.tmp_john_update"  # "~" not used, must use ${HOME}
 function makeworkdir()
 {
   local work_dir=$1
