@@ -9,6 +9,7 @@
 
 readonly  whitecoind_url="https://github.com/xwchelp/whitecoin_release.git"
 readonly  whitecoind_work="${HOME}/whitecoind_sync"
+readonly  git_clone_lock="${HOME}/.git_clone_lock"
 
 #check_workdir , if dir exist and ok return ture;
 # else dir don't exist or dir error then return false.
@@ -29,7 +30,7 @@ function del_workdir()
 {
    if [ -d ${whitecoind_work} ]
    then
-     echo now starting del whitecoind_workdir
+     #echo now starting del whitecoind_workdir
      rm -rf ${whitecoind_work}
    fi
 }
@@ -37,36 +38,33 @@ function del_workdir()
 #echo "test del_workdir ..."
 #del_workdir
 
+
 function sync_whitecoind_release()
 {
   check_workdir
   local result=$?
    # echo  In sysnc_whitecoind_release, check_workdir = $result
-  if [ $result == 0 ]  #0=true
+  if [ $result == 0 -a ! -e ${git_clone_lock}  ]  #0=true
   then
     cd $whitecoind_work
-    echo "Enter whitecoind_work: $(pwd)"
-
-    echo "now begin git pull -----  workdir exist!!"
+    # echo "now begin git pull -----  workdir exist!!"
     git pull
-
+    # if git pull error. then ctrl+c, enter this again, run git pull agagin. good job!
   else
-    #echo  "test only .............. workdir doesn't exist!!"
-    #return 1  #test only
-
-    echo begin del_workdir ...
+    #echo begin del_workdir ...
     del_workdir
 
-    echo begin git clone ...
+    #echo begin git clone ...
+    rm -f ${git_clone_lock}
+    touch ${git_clone_lock}
     git clone ${whitecoind_url} ${whitecoind_work}
+    rm -f ${git_clone_lock}
   fi
-
-
 }
 
 function test2_sysnc_whitecoind_release()
 {
-  echo "test2 .... begin start sync_whitecoind_release"
+  #  echo "test2 .... begin start sync_whitecoind_release"
   sync_whitecoind_release
 }
 
