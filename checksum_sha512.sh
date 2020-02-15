@@ -27,6 +27,7 @@ function makeworkdir()
   mkdir -p $work_dir > /dev/null 2>&1
 }
 
+# This ways baned by GFW!!!  GIVE UP!
 readonly url_whitecoind_last_sum='https://raw.githubusercontent.com/xwchelp/whitecoin_release/master/whitecoind_last.sha512.sum'
 function get_whitecoind_last_sum()
 {
@@ -44,6 +45,8 @@ function get_whitecoind_last_sum()
   #cd $cur_dir
   return 0
 }
+
+
 
 function file_sha512sum()
 {

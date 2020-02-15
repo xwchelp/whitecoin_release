@@ -68,7 +68,7 @@ function test2_sysnc_whitecoind_release()
   sync_whitecoind_release
 }
 
-test2_sysnc_whitecoind_release
+#test2_sysnc_whitecoind_release
 
 function test1_check_workdir()
 {
@@ -80,5 +80,40 @@ function test1_check_workdir()
 #test1_check_workdir
 
 
+function repeat_sync_whitecoind()
+{
+  readonly sync_ok="Already up-to-date."
+  readonly repeat_times=5
+
+
+  local int=1
+  while (( $int<=$repeat_times ))
+  do
+    echo $int
+    let "int++"
+
+    str_sync=$(sync_whitecoind_release | tail -n 1)
+    echo $str_sync
+    result="$(echo $str_sync | grep -c "${sync_ok}" )"
+    echo $result
+
+    if [ $result == 1 ]
+    then
+      return 0  #true
+    fi
+  done
+
+  return 1  # if repeat 5 times then return 1 = false
+}
+
+function test_repeat_sync_whitecoind()
+{
+  echo Start test_repeat_sync_whitecoind
+  repeat_sync_whitecoind
+  local result=$?
+  echo "repeat_sync_whitecoind return = "$result
+}
+
+test_repeat_sync_whitecoind
 
 #apt install -y git zip tmux
