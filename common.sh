@@ -152,8 +152,9 @@ function get_whitecoind_last_text_sum()
   fi
 }
 
-echo get_whitecoind_last_text_sum Begin ....
-get_whitecoind_last_text_sum
+#echo get_whitecoind_last_text_sum Begin ....
+#get_whitecoind_last_text_sum
+# test ok, on 2020.2.16
 
 #----------------------------------
 # 检查最新whitecoind的hash之否正确
@@ -187,27 +188,90 @@ function test_check_whitecoind_last_sum()
 
 # test ok, return [0,1,2,3,4], on 2020.2.16
 
-#----------------------------------
+
+#-----------------------------------------------------------------------
+#  本单元 主程序:
+#----------------------------------------------------------------------
+#
 #  判断whitecoind有新版本吗?
 #
+# 返回值:
+# 0=有新版本,需要更新 (本地文件可能不存在,没关系,这样的情况也需要更新,程序也有能力处理)
+# 1=版本一样, 无需更新
+# 2=下载错误, 报错,
+# 3=内部错误, 报错(保留)
+
 function check_whitecoind_update()
 {
   if check_whitecoind_last_sum
   then
-    echo whitecoind  download ok  ...
+    #echo whitecoind  download ok  ...
     sha1=$(curr_whitecoind_sum)
     sha2=$(get_whitecoind_last_text_sum)
-    if [[ -n $sha1 && -n $sha2 ]]
+
+    #sha1="sha512..." # only for test, should return 0, have new version
+    compare_sha_sum $sha1 $sha2
+
+    local result=$?
+    if [ $result == 0 ] #校验和一样,说明版本一样
     then
-      if ! compare_sha_sum $sha1 $sha2
-      then
-        return 0
-      fi
+       return 1
+    else
+       return 0  #校验和不一样, 新版本肯定存在,无论本地是否存在,都需要更新!
     fi
   else
-    echo whitecoind download error ... 
+   return 2
+   #echo whitecoind download error ... 
   fi
 }
+
+#----------------------------------------------------
+#
+function test1_check_whitecoind_update()
+{
+  echo "This test should return 1, not new version"
+
+  check_whitecoind_update
+  echo "result="$?
+}
+
+test1_check_whitecoind_update
+
+function test2_check_whitecoind_update()
+{
+  echo "This test should return 0, have new version"
+  check_whitecoind_update
+  echo "result="$?
+}
+
+#test2_check_whitecoind_update
+
+
+function test3_check_whitecoind_update()
+{
+  if [ -f ${path_whitecoind_last} ]
+  then
+    mv -f  ${path_whitecoind_last} ${path_whitecoind_last}.bak
+  fi
+
+  echo "This test should return 2, download fail"
+  check_whitecoind_update
+  echo "result="$?
+
+  if [ -f ${path_whitecoind_last}.bak ]
+  then
+    mv  ${path_whitecoind_last}.bak  ${path_whitecoind_last}
+  fi
+
+}
+
+#test3_check_whitecoind_update
+
+
+#--------------------------------------------------
+
+
+
 
 #check_whitecoind_update
 

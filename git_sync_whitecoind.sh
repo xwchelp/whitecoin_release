@@ -16,7 +16,10 @@ readonly  git_clone_lock="${HOME}/.git_clone_lock"
 function check_workdir()
 {
   local result=1
-  if test -d $whitecoind_work  -a -d ${whitecoind_work}/.git
+  if   test  -d $whitecoind_work \
+         -a  -d ${whitecoind_work}/.git \
+    && test  -f ${whitecoind_work}/whitecoind_last.sha512.sum \
+         -a  -f ${whitecoind_work}/whitecoind_last
   then
     result=0
   fi
