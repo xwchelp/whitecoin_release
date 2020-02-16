@@ -68,7 +68,7 @@ function get_whitecoind_last_sum()
 function test1_file_sha512sum()
 {
   echo "begin test1_file_sha512sum"
-  readonly local file="/usr/local/bin/whitecoind"
+  local file="/usr/local/bin/whitecoind"
   echo $(file_sha512sum $file)
 }
 
@@ -77,7 +77,8 @@ function test1_file_sha512sum()
 function test2_file_sha512sum()
 {
   echo "Begin test2_file_sha512sum"
-  local readonly file="/usr/local/bin/erro_nonfile"
+  echo "This example, The Next line is "$NULL_NO_FILE
+  local file="/usr/local/bin/erro_nonfile"
   echo $(file_sha512sum $file)
 }
 
@@ -86,7 +87,8 @@ function test2_file_sha512sum()
 function test3_file_sha512sum()
 {
   echo "begin test3_file_sha512sum"
-  readonly local file="/usr/local/bin/whitecoind"
+  echo "This example must show RIGHT sha512hash, and return 0"
+  local file="/usr/local/bin/whitecoind"
   local sum=$(file_sha512sum $file)
   echo "return ="$?
   echo $sum
@@ -98,9 +100,10 @@ function test4_file_sha512sum()
 {
 # 经过测试, 函数的两种返回方式,不能同时引用
   echo test4_file_sha512sum
-  readonly local file="/usr/nothis_file_erro"
+  echo "this example must return 1, and show ${NULL_NO_FILE}"
+  local file="/usr/nothis_file_erro"
   local sum=$(file_sha512sum $file)
-  echo "return="$?
+  echo "return="$?  #not get right return value of file_sha512sum
   echo $sum
 }
 
@@ -109,7 +112,7 @@ function test4_file_sha512sum()
 function test5_file_sha512sum()
 {
   echo test5_file_sha512sum
-  readonly local file="/usr/nothis_file_erro"
+  local file="/usr/nothis_file_erro"
   local sum=$(file_sha512sum $file)
   echo $sum
   file_sha512sum $file > /dev/null 2>&1
@@ -118,6 +121,23 @@ function test5_file_sha512sum()
 }
 
 #test5_file_sha512sum
+
+
+function test_all_file_sha512sum()
+{
+  echo 1:
+  test1_file_sha512sum
+  echo 2:
+  test2_file_sha512sum
+  echo 3:
+  test3_file_sha512sum
+  echo 4:
+  test4_file_sha512sum
+  echo 5:
+  test5_file_sha512sum
+}
+
+#test_all_file_sha512sum
 
 
 
@@ -190,4 +210,50 @@ function test2()
 #mkdir -p ${workdir}
 #mkdir -p tmp
 
-#sudo apt install -y zip git tmux
+function test_compare_sha_sum()
+{
+  echo Test compare_sha_sum ...
+  echo output must 0,1,2,3,4
+
+
+  local s1="abc"
+  local s2="abc"
+  compare_sha_sum $s1 $s2
+  echo $?
+
+  local s1="abc"
+  local s2="abcd"
+  compare_sha_sum $s1 $s2
+  echo $?
+
+  local s1=${NULL_NO_FILE}
+  local s2=${NULL_NO_FILE}
+  compare_sha_sum $s1 $s2
+  echo $?
+
+  local s1=${NULL_NO_FILE}
+  local s2="a"
+  compare_sha_sum $s1 $s2
+  echo $?
+
+  local s1="a"
+  local s2=${NULL_NO_FILE}
+  compare_sha_sum $s1 $s2
+  echo $?
+
+  return 0
+
+}
+
+#test_compare_sha_sum
+#echo test_compare_sha_sum=$?
+
+#调用函数必须马上使用 $? 才行,否则就可能丢失
+#哪怕后面没有要执行的语句也可能会丢失,经测试
+#1,空行不影响结果
+#2,注释行不影响结果
+#3,函数,哪怕不调用,也会影响结果## 这个就要超级注意!!
+#4,语句,肯定影响结果
+
+
+
