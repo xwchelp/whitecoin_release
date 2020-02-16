@@ -7,10 +7,15 @@
 #1. git clone /git pull whitecoind_release
 #2. install whitecoind
 
-readonly  whitecoind_url="https://github.com/xwchelp/whitecoin_release.git"
-readonly  whitecoind_work="${HOME}/whitecoind_sync"
-readonly  git_clone_lock="${HOME}/.git_clone_lock"
+. common.sh
 
+# alaway difined in commom.sh:
+#readonly  whitecoind_url="https://github.com/xwchelp/whitecoin_release.git"
+#readonly  whitecoind_work="${HOME}/whitecoind_sync"
+#readonly  git_clone_lock="${HOME}/.git_clone_lock"
+
+#---------------------------------------------------------
+#
 #check_workdir , if dir exist and ok return ture;
 # else dir don't exist or dir error then return false.
 function check_workdir()
@@ -42,6 +47,8 @@ function del_workdir()
 #del_workdir
 
 
+#-----------------------------------------------------
+#
 function sync_whitecoind_release()
 {
   check_workdir
@@ -73,6 +80,8 @@ function test2_sysnc_whitecoind_release()
 
 #test2_sysnc_whitecoind_release
 
+#----------------------------------------------------
+#
 function test1_check_workdir()
 {
   check_workdir
@@ -83,6 +92,13 @@ function test1_check_workdir()
 #test1_check_workdir
 
 
+#-------------------------------------------------------
+#  repeat_sync_whitecoind
+#重复5次,尝试下载和同步github上的whitecoind资源
+#返回: 0=同步成功
+#      1=同步不成功!
+#标准输出,同步过程
+#
 function repeat_sync_whitecoind()
 {
   readonly sync_ok="Already up-to-date."
@@ -117,6 +133,6 @@ function test_repeat_sync_whitecoind()
   echo "repeat_sync_whitecoind return = "$result
 }
 
-test_repeat_sync_whitecoind
+#test_repeat_sync_whitecoind
 
 #apt install -y git zip tmux

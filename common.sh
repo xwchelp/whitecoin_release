@@ -225,6 +225,8 @@ function check_whitecoind_update()
   fi
 }
 
+# test OK on 2020.2.16
+
 #----------------------------------------------------
 #
 function test1_check_whitecoind_update()
@@ -235,7 +237,7 @@ function test1_check_whitecoind_update()
   echo "result="$?
 }
 
-test1_check_whitecoind_update
+#test1_check_whitecoind_update
 
 function test2_check_whitecoind_update()
 {

@@ -15,7 +15,7 @@
 # cd whitecoin_release
 # ./update_whitecoind_git.sh
 
-path_whitecoind="/usr/local/bin/"
+readonly path_whitecoind="/usr/local/bin/"
 
 function backup_whitecoind()
 {
@@ -46,7 +46,7 @@ echo "Restart whitecoind"
 sudo systemctl start whitecoin
 sudo systemctl enable whitecoin
 
-echo 
+echo
 echo "ls -lh "${path_whitecoind}
 ls -lh ${path_whitecoind}
 
