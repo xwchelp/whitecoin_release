@@ -8,7 +8,7 @@
 1. whitecoind_last
 2. whitecoind_last.sha512.sum
 ---
-# update Whitecoind in Whitenode by CLI
+# Update whitecoind in whitenode by CLI
  *Please update to Whitecoin 2.5.4 for your Whitenode(raspbarry pi 3B+)*
 ### Use git update way (English):
 1. $ ssh pi@your_raspberry_ip    //default password is "raspberry"
