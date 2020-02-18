@@ -102,8 +102,8 @@ function test1_check_workdir()
 #
 function repeat_sync_whitecoind()
 {
-  readonly sync_ok="Already up-to-date."
-  readonly repeat_times=5
+  local sync_ok="Already up-to-date."
+  local repeat_times=5
 
 
   local int=1
