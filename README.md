@@ -6,19 +6,16 @@
     whitecoind version: whitecoind_last = v2.5.4.0-19-ge1cd7c0
 
 1. whitecoind_last
-2. whitecoind_v2.5.4.0-19-ge1cd7c0f
-3. whitecoind_v2.5.4.0-19-ge1cd7c0f.sha256.sum
-4. file 1 is same to file 2. Their sha256sum is in file 3
-5. Count sha256sum : $sha256sum whitecoind_last
+2. whitecoind_last.sha512.sum
 ---
 
  *Please update to Whitecoin 2.5.4 for your Whitenode(raspbarry pi 3B+)*
 ### Use git update way:
 1. $ ssh pi@your_raspberry_ip    //default password is "raspberry"
-2. $ sudo apt-get install -y zip git tmux
+2. $ sudo apt -y git zip tmux
 3. $ git clone https://github.com/xwchelp/whitecoin_release.git
 4. $ cd whitecoin_release
-5. $ ./update_whitecoind_git.sh
+5. $ ./do_install_whitecoind.sh
 6. $ Done All
 7. $  In your explorer input url: https://your_raspberry_ip for check it.
 
