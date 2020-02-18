@@ -31,6 +31,8 @@
 #readonly workdir="${HOME}/.tmp_john_update"  # "~" not used, must use ${HOME}
 
 . common.sh
+. check_sha512.sh
+
 
 function makeworkdir()
 {
@@ -100,7 +102,8 @@ function test4_file_sha512sum()
 {
 # 经过测试, 函数的两种返回方式,不能同时引用
   echo test4_file_sha512sum
-  echo "this example must return 1, and show ${NULL_NO_FILE}"
+  echo "this example must return 1,(ERROR!) and show ${NULL_NO_FILE}"
+  echo " 经过测试, 函数的两种返回方式,不能同时引用, 所以返回结果1,丢失.最终返回0 !!!!"
   local file="/usr/nothis_file_erro"
   local sum=$(file_sha512sum $file)
   echo "return="$?  #not get right return value of file_sha512sum
@@ -212,6 +215,8 @@ function test2()
 
 function test_compare_sha_sum()
 {
+  echo
+  echo  ---------------------------------
   echo Test compare_sha_sum ...
   echo output must 0,1,2,3,4
 

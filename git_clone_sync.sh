@@ -91,7 +91,8 @@ function test1_check_workdir()
 
 #test1_check_workdir
 
-
+#----------------------------------------------------
+#     本单元主程序
 #-------------------------------------------------------
 #  repeat_sync_whitecoind
 #重复5次,尝试下载和同步github上的whitecoind资源
@@ -108,13 +109,13 @@ function repeat_sync_whitecoind()
   local int=1
   while (( $int<=$repeat_times ))
   do
-    echo $int
+    echo "Dwonload try times:  ${int}/${repeat_times}"
     let "int++"
 
     str_sync=$(sync_whitecoind_release | tail -n 1)
     echo $str_sync
     result="$(echo $str_sync | grep -c "${sync_ok}" )"
-    echo $result
+    echo "Count include 'Already up-to-date.' number = "$result
 
     if [ $result == 1 ]
     then

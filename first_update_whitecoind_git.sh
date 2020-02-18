@@ -10,5 +10,5 @@
 if repeat_sync_whitecoind
 then
   cd ${whitecoind_work}
-  git_update_main.sh
+  ./git_update_main.sh
 fi
