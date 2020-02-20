@@ -22,6 +22,7 @@ then
   rm -rf ~/script_whitecoind
 fi
 
+cd ~
 cp -rf ~/whitecoind_sync/script ~/script_whitecoind
 
 
