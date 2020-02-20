@@ -1,8 +1,9 @@
 ### whitecoin_release for whitenode
     raspberry pi 3b+ 1G RAM
     
-    readme version : V0.1  
+    readme version : V0.2  
     date:  2020.1.22
+    date_last_fixed:  2020.2.20
     whitecoind version: whitecoind_last = v2.5.4.0-19-ge1cd7c0
 
 1. whitecoind_last
