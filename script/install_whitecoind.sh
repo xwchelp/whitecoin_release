@@ -52,7 +52,7 @@ function install_whitecoind()
     sudo mkdir -p ${path_curr_whitecoind}
   fi
 
-  sudo cp ./whitecoind_last ${curr_whitecoind}
+  sudo cp ${whitecoind_work}/whitecoind_last ${curr_whitecoind}
   sudo chown pi:pi ${curr_whitecoind}
 }
 
