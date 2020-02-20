@@ -40,7 +40,7 @@
    #wget https://raw.githubusercontent.com/xwchelp/whitecoin_release/master/script/install_script_to_whitenode_image.sh \
     && chmod +x install_script_to_whitenode_image.sh && ./install_script_to_whitenode_image.sh
     
-2. # Now, php GUI can call this script for update whitecoind:
+2. Now, php GUI can call this script for update whitecoind:
   1. $cd ~/script_whitecoind
   2. $start_update.sh
   
@@ -51,7 +51,7 @@
 #3=内部错误,保留
 #4=下载错误,网络错误,等一段时间再来尝试
 #注释: 返回值 shell中使用$?获取,必须马上获取.
-#
+
 
    
 
