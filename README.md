@@ -36,7 +36,9 @@
 # Use This scipt by Build WhiteNode Image and Using GUI update
 
     1. In WhiteNode image build script, use this command, download script to image.
-       only one line
+       Building server must be in out of GFW, Or don't download github files.
+       command only one line:
+       
        $wget https://raw.githubusercontent.com/xwchelp/whitecoin_release/master/script/install_script_to_whitenode_image.sh \
           && chmod +x install_script_to_whitenode_image.sh && ./install_script_to_whitenode_image.sh
     
