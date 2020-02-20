@@ -5,16 +5,18 @@
 sudo apt -y git zip
 if [ -d ~/whitecoind_sync ]
 then
+   cd ~/whitecoind_sync
    git pull
 else
-  git clone https://github.com/xwchelp/whitecoin_release.git ~/whitecoind_sync
+   cd ~
+   git clone https://github.com/xwchelp/whitecoin_release.git ~/whitecoind_sync
 fi
 
 if [ -d ~/script_whitecoind ]
 then
   rm -rf ~/script_whitecoind
 else
-  cp -rf 	~/whitecoind_sync/script ~/script_whitecoind
+  cp -rf ~/whitecoind_sync/script ~/script_whitecoind
 fi
 
 # The end !
