@@ -40,8 +40,8 @@
        Building server must be in out of GFW, Or don't download github files.
        command only one line:
        
-       $wget https://raw.githubusercontent.com/xwchelp/whitecoin_release/master/script/install_script_to_whitenode_image.sh \
-          && chmod +x install_script_to_whitenode_image.sh && ./install_script_to_whitenode_image.sh
+       $wget https://raw.githubusercontent.com/xwchelp/whitecoin_release/master/script/install_script.sh \
+          && chmod +x install_script.sh && ./install_script.sh
     
     2. Now, php GUI can call this script for update whitecoind:
        $ cd ~/script_whitecoind
