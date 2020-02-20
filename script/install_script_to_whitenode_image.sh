@@ -1,4 +1,3 @@
-#!/bin/bash
 # This script install some scripts for updating whitecoind to whitenode image file at building whitenode image
 # Building server must be in out of GFW, Or don't download github files
 
@@ -21,9 +20,10 @@ echo "Now cp whitecoind_sync/script ~/script_whitecoind"
 if [ -d ~/script_whitecoind ]
 then
   rm -rf ~/script_whitecoind
-else
-  cp -rf ~/whitecoind_sync/script ~/script_whitecoind
 fi
+
+cp -rf ~/whitecoind_sync/script ~/script_whitecoind
+
 
 # The end !
 
