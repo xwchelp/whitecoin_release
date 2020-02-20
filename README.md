@@ -13,8 +13,8 @@
 ### Use git update way (English):
 1. $ ssh pi@your_raspberry_ip    //default password is "raspberry"
 2. $ sudo apt -y git zip tmux
-3. $ git clone https://github.com/xwchelp/whitecoin_release.git
-4. $ cd whitecoin_release
+3. $ git clone https://github.com/xwchelp/whitecoin_release.git whitecoind_sync
+4. $ cd whitecoind_sync/script
 5. $ ./do_install_whitecoind.sh
 6. $ Done All
 7. $  In your explorer input url: https://your_raspberry_ip for check it.
@@ -23,8 +23,8 @@
 ### 使用gitclone下载安装(Chinese):
 1. $ ssh pi@your_raspberry_ip    //树梅派矿机缺省密码 "raspberry"
 2. $ sudo apt-get install -y zip git tmux
-3. $ git clone https://github.com/xwchelp/whitecoin_release.git
-4. $ cd whitecoin_release
+3. $ git clone https://github.com/xwchelp/whitecoin_release.git whitecoind_sync
+4. $ cd whitecoind_sync/script
 5. $ ./do_install_whitecoind.sh  
 6. 安装完成,可以在 浏览器查看你的矿机,地址栏输入:  https://your_raspberry_ip  
 7. 注意1: $是树梅派给的提示信息,不用输入, 第一行 //之后是注释,不用输入
