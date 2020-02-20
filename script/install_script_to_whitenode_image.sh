@@ -2,16 +2,22 @@
 # This script install some scripts for updating whitecoind to whitenode image file at building whitenode image
 # Building server must be in out of GFW, Or don't download github files
 
-sudo apt -y git zip
+#echo "install git and zip"
+sudo apt install -y git zip
+
+#echo "if existed ~/whitecoind_sync"
 if [ -d ~/whitecoind_sync ]
 then
+ #  echo "git pull"
    cd ~/whitecoind_sync
    git pull
 else
    cd ~
+  # echo "git clone"
    git clone https://github.com/xwchelp/whitecoin_release.git ~/whitecoind_sync
 fi
 
+echo "Now cp whitecoind_sync/script ~/script_whitecoind"
 if [ -d ~/script_whitecoind ]
 then
   rm -rf ~/script_whitecoind
