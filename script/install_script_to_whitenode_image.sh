@@ -3,8 +3,20 @@
 # Building server must be in out of GFW, Or don't download github files
 
 sudo apt -y git zip
-git clone https://github.com/xwchelp/whitecoin_release.git ~/whitecoind_sync
-cp -rf 	~/whitecoind_sync/script ~/script_whitecoind
+if [ -d ~/whitecoind_sync ]
+then
+   git pull
+else
+  git clone https://github.com/xwchelp/whitecoin_release.git ~/whitecoind_sync
+fi
+
+if [ -d ~/script_whitecoind ]
+then
+  rm -rf ~/script_whitecoind
+else
+  cp -rf 	~/whitecoind_sync/script ~/script_whitecoind
+fi
+
 # The end !
 
 # Now, php GUI can call this script for update whitecoind:
