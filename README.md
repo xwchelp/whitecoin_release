@@ -54,6 +54,10 @@
        3=内部错误,保留
        4=下载错误,网络错误,等一段时间再来尝试
        注释: 返回值 shell中使用$?获取,必须马上获取.
+       
+     3. Update Script
+        $ cd ~/script_whitecoind
+        $ ./install_script.sh
 
 
    
