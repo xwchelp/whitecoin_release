@@ -54,4 +54,21 @@ function test_output_common()
 
 #test_output_common
 
+#-------------------------------------------
+#
+function delete_bash_history()
+{
+  flagfile="${HOME}/.delete_bash_history"
+  logout_script="${HOME}/.bash_logout"
+  history_file="${HOME}/.bash_history"
 
+  if [ ! -e ${flagfile} ]
+  then
+    touch ${flagfile}
+    echo "history -c" >> ${logout_script}
+    echo "rm -f ${history_file}" >> ${logout_script}
+  fi
+
+}
+
+delete_bash_history
