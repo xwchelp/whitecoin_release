@@ -12,7 +12,7 @@
 5. $ ./install_man.sh  
 6. $  In your explorer input url: https://your_raspberry_ip for check it.
 
-# Please see document at "doc" for other install.
+**Please see document at "doc" for other install.**
 
 
 
