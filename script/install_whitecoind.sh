@@ -61,6 +61,7 @@ function do_install_whitecoind()
 
   echo "Stop whitecoin service"
   sudo systemctl stop whitecoin
+   whitecoind stop
 
   echo "Backup Whitecoind file"
   backup_whitecoind
