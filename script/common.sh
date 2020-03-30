@@ -20,7 +20,7 @@
 
 #本地whitecoind git资源
 #readonly
-  whitecoind_work="${HOME}/whitecoind_sync"
+  whitecoind_work="${HOME}/whitecoin_release"
 
 #下载过程中的锁.
 #readonly
