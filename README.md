@@ -8,7 +8,7 @@
 #  Update Way:
 1. $ ssh pi@your_raspberry_ip
 2. $ git clone https://github.com/xwchelp/whitecoin_release.git
-3. $ cd whitecoin_release
+3. $ cd whitecoin_release 
 4  $ ./install_man.sh
 5. $ Browse https://your_raspberry_ip
 
