@@ -10,8 +10,7 @@
 #. install_whitecoind.sh
 . main_update.sh
 
-#path_curr_whitecoind="/usr/local/bin"
-#whitecoind_work="${HOME}/whitecoind_sync"
+
 #whitecoind_last_checksum_text=${whitecoind_work}/whitecoind_last.sha512.sum
 
 #------------------------------------------
