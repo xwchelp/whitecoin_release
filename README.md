@@ -1,9 +1,10 @@
 ### whitecoin_release for whitenode
     raspberry pi 3b+ 1G RAM    
-    readme version : V0.6  
+    readme version : V0.7 
     date:  2020.1.22
-    date_last_fixed:  2020.3.30
+    date_last_fixed:  2020.5.20
     version: v2.5.4.2-3-gd5e0778e-dirty
+             with USE_UPNP=1
 
 #  Update Way:
 1. $ ssh pi@your_raspberry_ip
